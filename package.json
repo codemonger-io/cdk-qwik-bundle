@@ -1,0 +1,44 @@
+{
+  "name": "cdk-qwik-bundle",
+  "version": "0.1.0",
+  "description": "Deploy a Qwik app through the CDK",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.js.map",
+    "dist/index.d.ts"
+  ],
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs && api-extractor run --local",
+    "build:doc": "npm run build && api-documenter markdown --input-folder temp --output-folder api-docs/markdown",
+    "type-check": "tsc --noEmit",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qwik",
+    "cdk",
+    "aws"
+  ],
+  "author": "Kikuo Emoto <kemoto@codemonger.io>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.0",
+    "constructs": "^10.0"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.22.33",
+    "@microsoft/api-extractor": "^7.36.4",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/node": "^20.4.9",
+    "aws-cdk-lib": "^2.91.0",
+    "constructs": "^10.2.69",
+    "rollup": "^3.28.0",
+    "tslib": "^2.6.1",
+    "typescript": "^5.0.4"
+  }
+}
