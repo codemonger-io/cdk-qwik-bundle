@@ -6,27 +6,29 @@
 
 import { AssetHashType } from 'aws-cdk-lib';
 import { aws_lambda } from 'aws-cdk-lib';
-import { BundlingOptions } from 'aws-cdk-lib';
+import { BundlingFileAccess } from 'aws-cdk-lib';
+import { BundlingOptions as BundlingOptions_2 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { DockerImage } from 'aws-cdk-lib';
 import { DockerRunOptions } from 'aws-cdk-lib';
 import { ILocalBundling } from 'aws-cdk-lib';
 
 // @beta
-export class Bundling implements BundlingOptions {
+export class Bundling implements BundlingOptions_2 {
     constructor(props: BundlingProps);
     static bundle(options: BundlingProps): aws_lambda.Code;
+    readonly bundlingFileAccess: BundlingFileAccess;
     readonly command: string[];
     readonly image: DockerImage;
     readonly local: ILocalBundling;
     readonly workingDirectory: string;
 }
 
+// Warning: (ae-forgotten-export) The symbol "BundlingOptions" needs to be exported by the entry point index.d.ts
+//
 // @beta
-export interface BundlingProps extends DockerRunOptions {
+export interface BundlingProps extends BundlingOptions {
     readonly architecture: aws_lambda.Architecture;
-    readonly assetHash?: string;
-    readonly assetHashType?: AssetHashType;
     readonly entry: string;
     readonly runtime?: aws_lambda.Runtime;
 }
@@ -38,6 +40,7 @@ export class QwikHandler extends aws_lambda.Function {
 
 // @beta
 export interface QwikHandlerProps extends aws_lambda.FunctionOptions {
+    readonly bundling?: BundlingOptions;
     readonly entry: string;
     readonly handler?: string;
     readonly runtime?: aws_lambda.Runtime;

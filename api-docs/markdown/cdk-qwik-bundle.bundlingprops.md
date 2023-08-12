@@ -12,17 +12,15 @@ Properties for [Bundling](./cdk-qwik-bundle.bundling.md)<!-- -->.
 **Signature:**
 
 ```typescript
-export interface BundlingProps extends DockerRunOptions 
+export interface BundlingProps extends BundlingOptions 
 ```
-**Extends:** DockerRunOptions
+**Extends:** BundlingOptions
 
 ## Properties
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
 |  [architecture](./cdk-qwik-bundle.bundlingprops.architecture.md) | <code>readonly</code> | lambda.Architecture | **_(BETA)_** Architecture of the Lambda function. |
-|  [assetHash?](./cdk-qwik-bundle.bundlingprops.assethash.md) | <code>readonly</code> | string | **_(BETA)_** _(Optional)_ Asset hash. |
-|  [assetHashType?](./cdk-qwik-bundle.bundlingprops.assethashtype.md) | <code>readonly</code> | AssetHashType | **_(BETA)_** _(Optional)_ Asset hash type. |
 |  [entry](./cdk-qwik-bundle.bundlingprops.entry.md) | <code>readonly</code> | string | **_(BETA)_** Path to the folder containing the Qwik app. |
 |  [runtime?](./cdk-qwik-bundle.bundlingprops.runtime.md) | <code>readonly</code> | lambda.Runtime | **_(BETA)_** _(Optional)_ Runtime of the Lambda function. |
 

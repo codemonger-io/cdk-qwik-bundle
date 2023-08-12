@@ -20,6 +20,7 @@ export interface QwikHandlerProps extends lambda.FunctionOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
+|  [bundling?](./cdk-qwik-bundle.qwikhandlerprops.bundling.md) | <code>readonly</code> | BundlingOptions | **_(BETA)_** _(Optional)_ Bundling options. |
 |  [entry](./cdk-qwik-bundle.qwikhandlerprops.entry.md) | <code>readonly</code> | string | **_(BETA)_** Path to the folder containing the Qwik app. |
 |  [handler?](./cdk-qwik-bundle.qwikhandlerprops.handler.md) | <code>readonly</code> | string | **_(BETA)_** _(Optional)_ Handler function name. |
 |  [runtime?](./cdk-qwik-bundle.qwikhandlerprops.runtime.md) | <code>readonly</code> | lambda.Runtime | **_(BETA)_** _(Optional)_ Runtime. |

@@ -12,9 +12,9 @@ Bundler for a Qwik app.
 **Signature:**
 
 ```typescript
-export declare class Bundling implements BundlingOptions 
+export declare class Bundling implements CdkBundlingOptions 
 ```
-**Implements:** BundlingOptions
+**Implements:** CdkBundlingOptions
 
 ## Constructors
 
@@ -26,6 +26,7 @@ export declare class Bundling implements BundlingOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
+|  [bundlingFileAccess](./cdk-qwik-bundle.bundling.bundlingfileaccess.md) | <code>readonly</code> | BundlingFileAccess | **_(BETA)_** File access mode. |
 |  [command](./cdk-qwik-bundle.bundling.command.md) | <code>readonly</code> | string\[\] | **_(BETA)_** Command to run on the Docker image to build the Qwik app. |
 |  [image](./cdk-qwik-bundle.bundling.image.md) | <code>readonly</code> | DockerImage | **_(BETA)_** Docker image to build the Qwik app. |
 |  [local](./cdk-qwik-bundle.bundling.local.md) | <code>readonly</code> | ILocalBundling | **_(BETA)_** Command to build the Qwik app on the local machine. |
