@@ -3,6 +3,7 @@ import { aws_lambda as lambda } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 import { Bundling } from './bundling';
+import type { BundlingOptions } from './types';
 
 /**
  * Constructor parameters for {@link QwikHandler}.
@@ -26,6 +27,9 @@ export interface QwikHandlerProps extends lambda.FunctionOptions {
    * @defaultValue {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.Runtime.html#static-nodejs_18_x|Runtime.NODEJS_18_X}
    */
   readonly runtime?: lambda.Runtime;
+
+  /** Bundling options. */
+  readonly bundling?: BundlingOptions;
 }
 
 /**
@@ -49,6 +53,7 @@ export class QwikHandler extends lambda.Function {
       runtime: props.runtime ?? lambda.Runtime.NODEJS_18_X,
       handler,
       code: Bundling.bundle({
+        ...props.bundling ?? {},
         entry,
         runtime: props.runtime,
         architecture,

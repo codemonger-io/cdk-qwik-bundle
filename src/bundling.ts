@@ -3,13 +3,15 @@ import * as path from 'path';
 import {
   AssetHashType,
   AssetStaging,
-  BundlingOptions,
+  BundlingFileAccess,
+  BundlingOptions as CdkBundlingOptions,
   DockerImage,
   DockerRunOptions,
   ILocalBundling,
   aws_lambda as lambda,
 } from 'aws-cdk-lib';
 
+import type { BundlingOptions } from './types';
 import { exec } from './util';
 
 /**
@@ -17,7 +19,7 @@ import { exec } from './util';
  *
  * @beta
  */
-export interface BundlingProps extends DockerRunOptions {
+export interface BundlingProps extends BundlingOptions {
   /** Path to the folder containing the Qwik app. */
   readonly entry: string;
 
@@ -26,32 +28,6 @@ export interface BundlingProps extends DockerRunOptions {
 
   /** Architecture of the Lambda function. */
   readonly architecture: lambda.Architecture;
-
-  /**
-   * Asset hash.
-   *
-   * @remarks
-   *
-   * You have to specify
-   * {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.AssetHashType.html#custom|AssetHashType.CUSTOM}
-   * to {@link BundlingProps.assetHashType} to use this.
-   *
-   * @defaultValue `undefined`
-   */
-  readonly assetHash?: string;
-
-  /**
-   * Asset hash type.
-   *
-   * @remarks
-   *
-   * You have to specify
-   * {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.AssetHashType.html#custom|AssetHashType.CUSTOM}
-   * to use {@link BundlingProps.assetHash}.
-   *
-   * @defaultValue {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.AssetHashType.html#output|AssetHashType.OUTPUT}
-   */
-  readonly assetHashType?: AssetHashType;
 }
 
 /**
@@ -59,12 +35,12 @@ export interface BundlingProps extends DockerRunOptions {
  *
  * @beta
  */
-export class Bundling implements BundlingOptions {
+export class Bundling implements CdkBundlingOptions {
   /** Bundles a Qwik app. */
   static bundle(options: BundlingProps): lambda.Code {
     return lambda.Code.fromAsset(options.entry, {
       assetHash: options.assetHash,
-      assetHashType: options.assetHashType ?? AssetHashType.OUTPUT,
+      assetHashType: options.assetHashType ?? AssetHashType.SOURCE,
       bundling: new Bundling(options),
     });
   }
@@ -77,23 +53,37 @@ export class Bundling implements BundlingOptions {
   public readonly local: ILocalBundling;
   /** Working directory in the Docker image. */
   public readonly workingDirectory: string;
+  /** File access mode. */
+  public readonly bundlingFileAccess: BundlingFileAccess;
 
   constructor(private readonly props: BundlingProps) {
-    this.image = DockerImage.fromRegistry('dummy');
+    const shouldBuildImage = props.forceDockerBundling;
+    this.image = shouldBuildImage
+      ? DockerImage.fromBuild(__dirname, {
+        buildArgs: {
+          // Qwik requires nodejs 15 or later
+          IMAGE: (props.runtime ?? lambda.Runtime.NODEJS_16_X).bundlingImage.image,
+        },
+        platform: props.architecture.dockerPlatform,
+      })
+      : DockerImage.fromRegistry('dummy');
     const bundlingCommand = this.createBundlingCommand({
       inputDir: AssetStaging.BUNDLING_INPUT_DIR,
       outputDir: AssetStaging.BUNDLING_OUTPUT_DIR,
       osPlatform: 'linux',
     });
     this.command = ['bash', '-c', bundlingCommand];
-    this.local = this.getLocalBundlingProvider();
     this.workingDirectory = '/';
+    this.bundlingFileAccess = props.bundlingFileAccess ?? BundlingFileAccess.VOLUME_COPY;
+    if (!props.forceDockerBundling) {
+      this.local = this.getLocalBundlingProvider();
+    }
   }
 
   private createBundlingCommand(options: BundlingCommandOptions): string {
     const pathJoin = osPathJoin(options.osPlatform);
     const osCommand = new OsCommand(options.osPlatform);
-    const installCommand = ['npm', 'install'].join(' ');
+    const installCommand = ['npm', 'ci'].join(' ');
     const buildCommand = ['npm', 'run', 'build'].join(' ');
     return chain(
       osCommand.changeDirectory(options.inputDir),
