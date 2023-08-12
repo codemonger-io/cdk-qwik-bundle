@@ -7,13 +7,14 @@
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
 > 
 
-Constructor parameters for .
+Constructor parameters for [QwikHandler](./cdk-qwik-bundle.qwikhandler.md)<!-- -->.
 
 **Signature:**
 
 ```typescript
-export interface QwikHandlerProps 
+export interface QwikHandlerProps extends lambda.FunctionOptions 
 ```
+**Extends:** lambda.FunctionOptions
 
 ## Properties
 
