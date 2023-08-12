@@ -83,7 +83,8 @@ export class Bundling implements CdkBundlingOptions {
   private createBundlingCommand(options: BundlingCommandOptions): string {
     const pathJoin = osPathJoin(options.osPlatform);
     const osCommand = new OsCommand(options.osPlatform);
-    const installCommand = ['npm', 'ci'].join(' ');
+    const installScript = options.installScript ?? 'ci';
+    const installCommand = ['npm', installScript].join(' ');
     const buildCommand = ['npm', 'run', 'build'].join(' ');
     return chain(
       osCommand.changeDirectory(options.inputDir),
@@ -101,6 +102,7 @@ export class Bundling implements CdkBundlingOptions {
         inputDir: this.props.entry,
         outputDir,
         osPlatform,
+        installScript: 'install',
       });
     const cwd = this.props.entry;
     return {
@@ -133,6 +135,7 @@ interface BundlingCommandOptions {
   readonly inputDir: string;
   readonly outputDir: string;
   readonly osPlatform: NodeJS.Platform;
+  readonly installScript?: string;
 }
 
 // Encapsulates the platform-specific commands.
