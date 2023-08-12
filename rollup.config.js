@@ -1,4 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
+import { builtinModules } from 'module';
 
 export default {
   input: 'src/index.ts',
@@ -7,6 +8,10 @@ export default {
     dir: 'dist',
     sourcemap: true,
   },
-  external: ['aws-cdk-lib', 'fs', 'os', 'path', 'constructs'],
+  external: [
+    ...builtinModules,
+    'aws-cdk-lib',
+    'constructs',
+  ],
   plugins: [typescript()],
 };
