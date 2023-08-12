@@ -7,13 +7,14 @@
   "files": [
     "dist/index.js",
     "dist/index.js.map",
-    "dist/index.d.ts"
+    "dist/index.d.ts",
+    "dist/Dockerfile"
   ],
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs && api-extractor run --local",
     "build:doc": "npm run build && api-documenter markdown --input-folder temp --output-folder api-docs/markdown",
     "type-check": "tsc --noEmit",
-    "prepare": "npm run build",
+    "prepare": "npm run build && cp src/Dockerfile dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
