@@ -2,7 +2,8 @@
 
 # サンプル
 
-- [シンプルなQwikアプリをHTTP APIで配信](./simple/README_ja.md)
+- [QwikアプリをHTTP APIで配信](./simple/README_ja.md)
+- [QwikアプリをCloudFrontディストリビューションで配信](./cloudfront)
 
 [`qwik-app`フォルダ](./qwik-app)にはサンプルで使用するQwikアプリが含まれています。
 

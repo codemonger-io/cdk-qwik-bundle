@@ -2,7 +2,8 @@ English / [日本語](README_ja.md)
 
 # Examples
 
-- [A simple Qwik app served via an HTTP API](./simple)
+- [Qwik app served via an HTTP API](./simple)
+- [Qwik app served via a CloudFront distribution](./cloudfront)
 
 [`qwik-app` folder](./qwik-app) contains the Qwik app used in the samples.
 
