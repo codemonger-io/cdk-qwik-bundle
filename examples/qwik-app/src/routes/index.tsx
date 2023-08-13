@@ -10,6 +10,9 @@ export default component$(() => {
         <br />
         Happy coding.
       </p>
+      <p>
+        <a href="/joke">Joke tutorial</a>
+      </p>
     </>
   );
 });
