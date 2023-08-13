@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
+import { CfnOutput, Duration, Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
@@ -12,6 +12,8 @@ export class SimpleStack extends Stack {
 
     const qwikApp = new QwikHandler(this, 'QwikApp', {
       entry: path.resolve('../qwik-app'),
+      memorySize: 256,
+      timeout: Duration.seconds(30),
     });
 
     const qwikAppIntegration = new HttpLambdaIntegration(
