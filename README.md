@@ -24,7 +24,7 @@ I would like to publish this library to npm if it could earn enought stars (mayb
 ### Qwik City Adapter
 
 There is no Qwik City Adapter dedicated to this library so far, instead, please add [Qwik City AWS Adapter](https://qwik.builder.io/docs/deployments/aws-lambda/) to your Qwik project.
-You may need some tweaks on it.
+You may need additional tweaks on it.
 
 ```sh
 npm run qwik add aws-lambda
@@ -56,7 +56,7 @@ You can find working examples in the [`examples` folder](./examples).
 
 ## API documentation
 
-Please see the [`api-docs` folder](./api-docs/cdk-qwik-bundle.api.md).
+Please see the [`api-docs` folder](./api-docs/markdown/index.md).
 
 ## Acknowledgements
 

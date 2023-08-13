@@ -2,7 +2,7 @@ English / [日本語](./README_ja.md)
 
 # Simple Example
 
-A simple Qwik app served via an [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) on Amazon API Gateway.
+A simple Qwik app served via an [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) on [Amazon API Gateway](https://aws.amazon.com/api-gateway/).
 
 You can learn:
 - how to use the [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md) construct
@@ -12,7 +12,7 @@ You can learn:
 
 ### Prerequisites
 
-Please finish the common configurations described in the [Section "Common configurations"](../README.md#common-configurations) in [`../README.md`](../README.md).
+Please finish the configurations described in the [Section "Common configurations"](../README.md#common-configurations) in the [`examples` folder](../README.md).
 
 ### Resolving dependencies
 

@@ -4,6 +4,8 @@ English / [日本語](README_ja.md)
 
 - [A simple Qwik app served via an HTTP API](./simple)
 
+[`qwik-app` folder](./qwik-app) contains the Qwik app used in the samples.
+
 ## Common configurations
 
 ### Setting AWS_PROFILE
@@ -17,7 +19,7 @@ export AWS_PROFILE=codemonger-jp
 
 ### Setting the toolkit stack name
 
-You can use the default toolkit stack, though, I prefer to create a toolkit stack dedicated to each project, because it makes cleanup easier.
+You can use the default toolkit stack, though, I prefer to create a toolkit stack dedicated to each project, because it makes cleanup easier after delete the project.
 If you want to create a toolkit stack other than the default, you should also [set the synthesizer qualifier](#setting-the-synthesizer-qualifier).
 
 ```sh
