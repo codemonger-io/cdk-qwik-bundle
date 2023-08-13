@@ -11,7 +11,7 @@ export default component$(() => {
         Happy coding.
       </p>
       <p>
-        <a href="/joke">Joke tutorial</a>
+        <a href={`${import.meta.env.BASE_URL}joke`}>Joke tutorial</a>
       </p>
     </>
   );

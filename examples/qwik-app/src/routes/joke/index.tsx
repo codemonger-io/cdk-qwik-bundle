@@ -59,7 +59,7 @@ export default component$(() => {
         </button>
       </section>
       <section>
-        <a href="/">Home</a>
+        <a href={import.meta.env.BASE_URL}>Home</a>
       </section>
     </div>
   );
