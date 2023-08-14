@@ -7,7 +7,7 @@
 > This API is provided as a preview for developers and may change based on feedback that we receive. Do not use this API in a production environment.
 > 
 
-Working directory in the Docker image.
+Working directory on the Docker container.
 
 **Signature:**
 

@@ -19,6 +19,9 @@ export class Bundling implements BundlingOptions_2 {
     static bundle(options: BundlingProps): aws_lambda.Code;
     readonly bundlingFileAccess: BundlingFileAccess;
     readonly command: string[];
+    readonly environment?: {
+        [key: string]: string;
+    };
     readonly image: DockerImage;
     readonly local: ILocalBundling;
     readonly workingDirectory: string;

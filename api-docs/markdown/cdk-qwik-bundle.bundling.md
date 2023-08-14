@@ -27,10 +27,11 @@ export declare class Bundling implements CdkBundlingOptions
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
 |  [bundlingFileAccess](./cdk-qwik-bundle.bundling.bundlingfileaccess.md) | <code>readonly</code> | BundlingFileAccess | **_(BETA)_** File access mode. |
-|  [command](./cdk-qwik-bundle.bundling.command.md) | <code>readonly</code> | string\[\] | **_(BETA)_** Command to run on the Docker image to build the Qwik app. |
+|  [command](./cdk-qwik-bundle.bundling.command.md) | <code>readonly</code> | string\[\] | **_(BETA)_** Command to run on the Docker container to build the Qwik app. |
+|  [environment?](./cdk-qwik-bundle.bundling.environment.md) | <code>readonly</code> | { \[key: string\]: string; } | **_(BETA)_** _(Optional)_ Environment variables to pass to the Docker container. |
 |  [image](./cdk-qwik-bundle.bundling.image.md) | <code>readonly</code> | DockerImage | **_(BETA)_** Docker image to build the Qwik app. |
 |  [local](./cdk-qwik-bundle.bundling.local.md) | <code>readonly</code> | ILocalBundling | **_(BETA)_** Command to build the Qwik app on the local machine. |
-|  [workingDirectory](./cdk-qwik-bundle.bundling.workingdirectory.md) | <code>readonly</code> | string | **_(BETA)_** Working directory in the Docker image. |
+|  [workingDirectory](./cdk-qwik-bundle.bundling.workingdirectory.md) | <code>readonly</code> | string | **_(BETA)_** Working directory on the Docker container. |
 
 ## Methods
 
