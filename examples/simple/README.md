@@ -34,6 +34,8 @@ npx cdk synth -c "@aws-cdk/core:bootstrapQualifier=$TOOLKIT_STACK_QUALIFIER"
 npx cdk deploy --toolkit-stack-name $TOOLKIT_STACK_NAME -c "@aws-cdk/core:bootstrapQualifier=$TOOLKIT_STACK_QUALIFIER"
 ```
 
+You will find a CDK stack `qwik-bundle-example-simple` deployed.
+
 ### Accessing the deployed app
 
 The CDK stack outputs the URL of the deployed HTTP API as `HttpApiUrl`.

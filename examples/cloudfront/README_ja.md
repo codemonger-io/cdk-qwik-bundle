@@ -6,7 +6,7 @@
 
 以下を学べます。
 - [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md)コンストラクトの使い方
-- Qwikアプリ用にCloudFrontディストリビューションを設定する方法 for a Qwik app
+- Qwikアプリ用にCloudFrontディストリビューションを設定する方法
 
 ## はじめる
 
@@ -33,6 +33,8 @@ npx cdk synth -c "@aws-cdk/core:bootstrapQualifier=$TOOLKIT_STACK_QUALIFIER"
 ```sh
 npx cdk deploy --toolkit-stack-name $TOOLKIT_STACK_NAME -c "@aws-cdk/core:bootstrapQualifier=$TOOLKIT_STACK_QUALIFIER"
 ```
+
+CDKスタックは`qwik-bundle-example-cloudfront`としてデプロイされます。
 
 ### デプロイしたアプリへのアクセス
 
