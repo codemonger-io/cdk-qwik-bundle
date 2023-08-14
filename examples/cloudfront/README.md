@@ -2,7 +2,7 @@ English / [日本語](./README_ja.md)
 
 # CloudFront Example
 
-A simple Qwik app served via a [Amazon CloudFront](https://aws.amazon.com/cloudfront/) distribution.
+A [simple Qwik app](../qwik-app) served via a [Amazon CloudFront](https://aws.amazon.com/cloudfront/) distribution.
 
 You can learn:
 - how to use the [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md) construct

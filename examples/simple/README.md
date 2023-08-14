@@ -2,7 +2,7 @@ English / [日本語](./README_ja.md)
 
 # Simple Example
 
-A simple Qwik app served via an [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) on [Amazon API Gateway](https://aws.amazon.com/api-gateway/).
+A [simple Qwik app](../qwik-app) served via an [HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) on [Amazon API Gateway](https://aws.amazon.com/api-gateway/).
 
 You can learn:
 - how to use the [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md) construct

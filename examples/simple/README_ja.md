@@ -2,7 +2,7 @@
 
 # シンプルなサンプル
 
-[Amazon API Gateway](https://aws.amazon.com/api-gateway/)の[HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html)でシンプルなQwikアプリを配信するサンプル。
+[Amazon API Gateway](https://aws.amazon.com/api-gateway/)の[HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html)で[シンプルなQwikアプリ](../qwik-app/README_ja.md)を配信するサンプル。
 
 以下を学べます。
 - [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md)コンストラクトの使い方

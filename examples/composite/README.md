@@ -2,7 +2,7 @@ English / [日本語](./README_ja.md)
 
 # Composite Example
 
-A simple Qwik app served via a [Amazon CloudFront](https://aws.amazon.com/cloudfront/) distribution under a non-root basepath.
+A [simple Qwik app](../qwik-app) served via a [Amazon CloudFront](https://aws.amazon.com/cloudfront/) distribution under a non-root basepath.
 Suppose a Qwik app is combined with other services under the same domain.
 
 You can learn:

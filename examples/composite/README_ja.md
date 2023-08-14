@@ -2,7 +2,7 @@
 
 # 他と組み合わせるサンプル
 
-[Amazon CloudFront](https://aws.amazon.com/cloudfront/)ディストリビューションでルート以外のベースパスからシンプルなQwikアプリを配信するサンプル。
+[Amazon CloudFront](https://aws.amazon.com/cloudfront/)ディストリビューションでルート以外のベースパスから[シンプルなQwikアプリ](../qwik-app/README_ja.md)を配信するサンプル。
 同じドメインの他のサービスとQwikアプリを組み合わせることを想定してください。
 
 以下を学べます。

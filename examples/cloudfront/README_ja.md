@@ -2,7 +2,7 @@
 
 # CloudFrontを使ったサンプル
 
-[Amazon CloudFront](https://aws.amazon.com/cloudfront/)ディストリビューションでシンプルなQwikアプリを配信するサンプル。
+[Amazon CloudFront](https://aws.amazon.com/cloudfront/)ディストリビューションで[シンプルなQwikアプリ](../qwik-app/README_ja.md)を配信するサンプル。
 
 以下を学べます。
 - [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md)コンストラクトの使い方
