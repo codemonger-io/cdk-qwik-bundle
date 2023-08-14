@@ -1,30 +1,30 @@
-English / [日本語](./README_ja.md)
+[English](./README.md) / 日本語
 
-# Qwik City App for cdk-qwik-bundle demonstration
+# cdk-qwik-bundleデモ用Qwik Cityアプリ
 
-This simple Qwik app serves as a demonstration for `cdk-qwik-bundle`.
-This app was initialized as an empty app with `npm create qwik@latest`, and [AWS Adapter](https://qwik.builder.io/docs/deployments/aws-lambda/) was added with `npm run qwik add aws-lambda`.
-This app includes the contents of the tutorial described in the ["Getting Started" guide](https://qwik.builder.io/docs/getting-started/), and an additional [configuration](#configuration).
+このシンプルなQwikアプリは`cdk-qwik-bundle`のデモンストレーション用です。
+このアプリは空のアプリとして作成(`npm create qwik@latest`)し、それから[AWS Adapter](https://qwik.builder.io/docs/deployments/aws-lambda/)を追加(`npm run qwik add aws-lambda`)しました。
+["Getting Started"ガイド](https://qwik.builder.io/docs/getting-started/)にあるチュートリアルのコンテンツと、追加の[設定](#設定)を含みます。
 
-## Configuration
+## 設定
 
-### Configuring the basepath
+### ベースパスの設定
 
-The basepath is a single slash ('/') by default.
-You can change it by setting the `DISTRIBUTION_BASEPATH` environment variable.
+デフォルトのベースパスはスラッシュひとつ('/')です。
+`DISTRIBUTION_BASEPATH`環境変数で変更することができます。
 
 ```sh
 export DISTRIBUTION_BASEPATH=/my-basepath/
 ```
 
-The specified value will be used to configure Vite as the [`base` option](https://vitejs.dev/config/shared-options.html#base).
-The [`composite` example](../composite) shows how to specify `DISTRIBUTION_BASEPATH` through [`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md).
-See [`vite.config.ts`](./vite.config.ts) for how it works.
+指定した値は[`base`オプション](https://vitejs.dev/config/shared-options.html#base)としてViteを設定するのに使われます。
+[`composite`サンプル](../composite/README_ja.md)では[`QwikHandler`](../../api-docs/markdown/cdk-qwik-bundle.qwikhandler.md)で`DISTRIBUTION_BASEPATH`を指定する方法を紹介しています。
+どのように機能するか興味があれば、[`vite.config.ts`](./vite.config.ts)をご覧ください。
 
-You can access the basepath in the Qwik app as [`import.meta.env.BASE_URL`](https://vitejs.dev/guide/build.html#public-base-path) which is substituted by Vite.
-See [`src/routes/index.tsx`](./src/routes/index.tsx) for how to use it.
+ベースパスはQwikアプリ内で[`import.meta.env.BASE_URL`](https://vitejs.dev/guide/build.html#public-base-path)としてアクセスでき、Viteが置き換えてくれます。
+使い方の例として、[`src/routes/index.tsx`](./src/routes/index.tsx)をご覧ください。
 
-## FYI: The following sections are from the original Qwik City App README.md
+## 以下の節はQwik City Appの元々のREADME.mdの内容です(ご参考)
 
 - [Qwik Docs](https://qwik.builder.io/)
 - [Discord](https://qwik.builder.io/chat)
