@@ -47,11 +47,13 @@ export class Bundling implements CdkBundlingOptions {
 
   /** Docker image to build the Qwik app. */
   public readonly image: DockerImage;
-  /** Command to run on the Docker image to build the Qwik app. */
+  /** Command to run on the Docker container to build the Qwik app. */
   public readonly command: string[];
   /** Command to build the Qwik app on the local machine. */
   public readonly local: ILocalBundling;
-  /** Working directory in the Docker image. */
+  /** Environment variables to pass to the Docker container. */
+  public readonly environment?: { [key: string]: string };
+  /** Working directory on the Docker container. */
   public readonly workingDirectory: string;
   /** File access mode. */
   public readonly bundlingFileAccess: BundlingFileAccess;
@@ -73,6 +75,7 @@ export class Bundling implements CdkBundlingOptions {
       osPlatform: 'linux',
     });
     this.command = ['bash', '-c', bundlingCommand];
+    this.environment = props.environment;
     this.workingDirectory = '/';
     this.bundlingFileAccess = props.bundlingFileAccess ?? BundlingFileAccess.VOLUME_COPY;
     if (!props.forceDockerBundling) {
@@ -104,7 +107,9 @@ export class Bundling implements CdkBundlingOptions {
         osPlatform,
         installScript: 'install',
       });
+    const environment = this.environment ?? {};
     const cwd = this.props.entry;
+
     return {
       tryBundle(outputDir: string): boolean {
         const localCommand = createLocalCommand(outputDir);
@@ -115,6 +120,7 @@ export class Bundling implements CdkBundlingOptions {
             localCommand,
           ],
           {
+            env: { ...process.env, ...environment },
             stdio: [
               'ignore',
               process.stderr,
