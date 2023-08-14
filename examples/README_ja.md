@@ -2,10 +2,11 @@
 
 # サンプル
 
-- [QwikアプリをHTTP APIで配信](./simple/README_ja.md)
-- [QwikアプリをCloudFrontディストリビューションで配信](./cloudfront)
+- [`simple`: QwikアプリをHTTP APIで配信](./simple/README_ja.md)
+- [`cloudfront`: QwikアプリをCloudFrontディストリビューションで配信](./cloudfront/README_ja.md)
+- [`composite`: QwikアプリをCloudFrontディストリビューションでルート以外のベースパスから配信](./composite/README_ja.md)
 
-[`qwik-app`フォルダ](./qwik-app)にはサンプルで使用するQwikアプリが含まれています。
+[`qwik-app`フォルダ](./qwik-app/README_ja.md)にはサンプルで使用するQwikアプリが含まれています。
 
 ## 共通の設定
 
