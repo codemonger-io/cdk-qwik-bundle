@@ -1,5 +1,5 @@
 {
-  "name": "cdk-qwik-bundle",
+  "name": "@codemonger-io/cdk-qwik-bundle",
   "version": "0.1.0",
   "description": "Deploy a Qwik app through the CDK",
   "main": "dist/index.js",
