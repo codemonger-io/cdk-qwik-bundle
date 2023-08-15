@@ -14,7 +14,7 @@ Properties for [Bundling](./cdk-qwik-bundle.bundling.md)<!-- -->.
 ```typescript
 export interface BundlingProps extends BundlingOptions 
 ```
-**Extends:** BundlingOptions
+**Extends:** [BundlingOptions](./cdk-qwik-bundle.bundlingoptions.md)
 
 ## Properties
 

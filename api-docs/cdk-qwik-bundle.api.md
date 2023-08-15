@@ -11,6 +11,7 @@ import { BundlingOptions as BundlingOptions_2 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { DockerImage } from 'aws-cdk-lib';
 import { DockerRunOptions } from 'aws-cdk-lib';
+import { IgnoreMode } from 'aws-cdk-lib';
 import { ILocalBundling } from 'aws-cdk-lib';
 
 // @beta
@@ -27,8 +28,16 @@ export class Bundling implements BundlingOptions_2 {
     readonly workingDirectory: string;
 }
 
-// Warning: (ae-forgotten-export) The symbol "BundlingOptions" needs to be exported by the entry point index.d.ts
-//
+// @beta
+export interface BundlingOptions extends DockerRunOptions {
+    readonly assetHash?: string;
+    readonly assetHashType?: AssetHashType;
+    readonly bundlingFileAccess?: BundlingFileAccess;
+    readonly exclude?: string[];
+    readonly forceDockerBundling?: boolean;
+    readonly ignoreMode?: IgnoreMode;
+}
+
 // @beta
 export interface BundlingProps extends BundlingOptions {
     readonly architecture: aws_lambda.Architecture;

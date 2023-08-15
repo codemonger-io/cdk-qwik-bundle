@@ -17,6 +17,7 @@ Incorporates a Qwik app into a CDK stack and deploys it as a Lambda function.
 
 |  Interface | Description |
 |  --- | --- |
+|  [BundlingOptions](./cdk-qwik-bundle.bundlingoptions.md) | **_(BETA)_** Options for bundling. |
 |  [BundlingProps](./cdk-qwik-bundle.bundlingprops.md) | **_(BETA)_** Properties for [Bundling](./cdk-qwik-bundle.bundling.md)<!-- -->. |
 |  [QwikHandlerProps](./cdk-qwik-bundle.qwikhandlerprops.md) | **_(BETA)_** Constructor parameters for [QwikHandler](./cdk-qwik-bundle.qwikhandler.md)<!-- -->. |
 
