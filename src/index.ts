@@ -8,3 +8,4 @@
 
 export * from './bundling';
 export * from './qwik-handler';
+export * from './types';
