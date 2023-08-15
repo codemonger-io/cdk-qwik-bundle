@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "aws-cdk-lib": "2.90.0",
-    "cdk-qwik-bundle": "github:codemonger-io/cdk-qwik-bundle",
+    "cdk-qwik-bundle": "github:codemonger-io/cdk-qwik-bundle#v0.1.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }
