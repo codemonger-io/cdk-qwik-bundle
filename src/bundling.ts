@@ -8,6 +8,7 @@ import {
   DockerImage,
   DockerRunOptions,
   ILocalBundling,
+  IgnoreMode,
   aws_lambda as lambda,
 } from 'aws-cdk-lib';
 
@@ -41,6 +42,8 @@ export class Bundling implements CdkBundlingOptions {
     return lambda.Code.fromAsset(options.entry, {
       assetHash: options.assetHash,
       assetHashType: options.assetHashType ?? AssetHashType.SOURCE,
+      ignoreMode: options.ignoreMode ?? IgnoreMode.GIT,
+      exclude: options.exclude ?? ['dist/**', 'server/**'],
       bundling: new Bundling(options),
     });
   }

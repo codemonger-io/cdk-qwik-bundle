@@ -40,6 +40,13 @@ export interface QwikHandlerProps extends lambda.FunctionOptions {
  * The Qwik app is supposed to be configured with
  * {@link https://qwik.builder.io/docs/deployments/aws-lambda/|Qwik City AWS Adapter}.
  *
+ * By default, the asset hash is computed based on the input files, and no
+ * bundling happens unless the asset hash changes.
+ * Files in the `dist` and `server` folders in your Qwik project, where build
+ * artifacts are usually outputted, are excluded from asset hash computation by
+ * default.
+ * This means changes in `dist` and `server` folders won't trigger bundling.
+ *
  * @beta
  */
 export class QwikHandler extends lambda.Function {

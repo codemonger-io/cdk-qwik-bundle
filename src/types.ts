@@ -1,7 +1,8 @@
 import {
   AssetHashType,
   BundlingFileAccess,
-  DockerRunOptions
+  DockerRunOptions,
+  IgnoreMode,
 } from 'aws-cdk-lib';
 
 /**
@@ -59,4 +60,33 @@ export interface BundlingOptions extends DockerRunOptions {
    * @defaultValue {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.BundlingFileAccess.html#volume_copy|BundlingFileAccess.VOLUME_COPY}
    */
   readonly bundlingFileAccess?: BundlingFileAccess;
+
+  /**
+   * Ignore mode.
+   *
+   * @remarks
+   *
+   * The default {@link BundlingOptions.exclude|exclude} pattern requires the
+   * ignore more to be
+   * {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.IgnoreMode.html#git|IgnoreMode.GIT}.
+   * folders.
+   *
+   * @defaultValue {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.IgnoreMode.html#git|IgnoreMode.GIT}
+   */
+  readonly ignoreMode?: IgnoreMode;
+
+  /**
+   * Path patterns of files excluded from hash computation.
+   *
+   * @remarks
+   *
+   * Build artifacts of a Qwik project are outputted to `dist` and `server`
+   * folders.
+   * The default value matches all the contents of these folders, and requires
+   * {@link BundlingOptions.ignoreMode|ignoreMode} to be
+   * {@link https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.IgnoreMode.html#git|IgnoreMode.GIT}.
+   *
+   * @defaultValue ["dist/**", "server/**"]
+   */
+  readonly exclude?: string[];
 }
