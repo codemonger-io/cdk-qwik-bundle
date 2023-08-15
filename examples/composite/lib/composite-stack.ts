@@ -12,7 +12,7 @@ import {
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-import { QwikHandler } from 'cdk-qwik-bundle';
+import { QwikHandler } from '@codemonger-io/cdk-qwik-bundle';
 
 export class CompositeStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {

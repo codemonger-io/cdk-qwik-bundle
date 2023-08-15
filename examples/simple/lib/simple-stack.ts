@@ -10,7 +10,7 @@ import { Construct } from 'constructs';
 import { HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 
-import { QwikHandler } from 'cdk-qwik-bundle';
+import { QwikHandler } from '@codemonger-io/cdk-qwik-bundle';
 
 export class SimpleStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {

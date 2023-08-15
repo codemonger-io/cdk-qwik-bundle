@@ -2,6 +2,10 @@
   "name": "@codemonger-io/cdk-qwik-bundle",
   "version": "0.1.0",
   "description": "Deploy a Qwik app through the CDK",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codemonger-io/cdk-qwik-bundle"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
