@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [cdk-qwik-bundle](./cdk-qwik-bundle.md) | Incorporates a Qwik app into a CDK stack and deploys it as a Lambda function. |
+|  [@codemonger-io/cdk-qwik-bundle](./cdk-qwik-bundle.md) | Incorporates a Qwik app into a CDK stack and deploys it as a Lambda function. |
 
