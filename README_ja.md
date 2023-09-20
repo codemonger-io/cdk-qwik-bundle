@@ -15,7 +15,7 @@
 ### インストール
 
 ```sh
-npm install https://github.com/codemonger-io/cdk-qwik-bundle.git#v0.1.0
+npm install https://github.com/codemonger-io/cdk-qwik-bundle.git#v0.2.0
 ```
 
 まだ[npm](https://www.npmjs.com)にはパッケージを公開していません。
