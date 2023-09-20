@@ -55,6 +55,8 @@ export class CompositeStack extends Stack {
             // as Qwik depends a lot on query strings,
             // we have to forward any query strings to the origin
             queryStringBehavior: cloudfront.CacheQueryStringBehavior.all(),
+            // Qwik expects a request to include an X-QRL header
+            headerBehavior: cloudfront.CacheHeaderBehavior.allowList('X-QRL'),
             defaultTtl: Duration.seconds(10),
             enableAcceptEncodingGzip: true,
             enableAcceptEncodingBrotli: true,
