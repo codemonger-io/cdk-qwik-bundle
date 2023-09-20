@@ -89,4 +89,18 @@ export interface BundlingOptions extends DockerRunOptions {
    * @defaultValue ["dist/**", "server/**"]
    */
   readonly exclude?: string[];
+
+  /**
+   * Whether "dist" and "server" folders are deleted before building.
+   *
+   * @remarks
+   *
+   * "dist" and "server" may contain artifacts from a previous build with a
+   * different configuration.
+   * This option will prevent the bundle from accidentally including different
+   * version.
+   *
+   * @defaultValue `false`
+   */
+  readonly cleanArtifacts?: boolean;
 }

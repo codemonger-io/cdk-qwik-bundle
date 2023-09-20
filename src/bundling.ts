@@ -76,6 +76,7 @@ export class Bundling implements CdkBundlingOptions {
       inputDir: AssetStaging.BUNDLING_INPUT_DIR,
       outputDir: AssetStaging.BUNDLING_OUTPUT_DIR,
       osPlatform: 'linux',
+      cleanArtifacts: props.cleanArtifacts,
     });
     this.command = ['bash', '-c', bundlingCommand];
     this.environment = props.environment;
@@ -89,11 +90,18 @@ export class Bundling implements CdkBundlingOptions {
   private createBundlingCommand(options: BundlingCommandOptions): string {
     const pathJoin = osPathJoin(options.osPlatform);
     const osCommand = new OsCommand(options.osPlatform);
+    const cleanCommands = options.cleanArtifacts
+      ? [
+        osCommand.deleteDirectory('dist'),
+        osCommand.deleteDirectory('server'),
+      ]
+      : [];
     const installScript = options.installScript ?? 'ci';
     const installCommand = ['npm', installScript].join(' ');
     const buildCommand = ['npm', 'run', 'build'].join(' ');
     return chain(
       osCommand.changeDirectory(options.inputDir),
+      ...cleanCommands,
       installCommand,
       buildCommand,
       osCommand.copyDirectory('dist', pathJoin(options.outputDir, 'dist')),
@@ -109,6 +117,7 @@ export class Bundling implements CdkBundlingOptions {
         outputDir,
         osPlatform,
         installScript: 'install',
+        cleanArtifacts: this.props.cleanArtifacts,
       });
     const environment = this.environment ?? {};
     const cwd = this.props.entry;
@@ -145,6 +154,7 @@ interface BundlingCommandOptions {
   readonly outputDir: string;
   readonly osPlatform: NodeJS.Platform;
   readonly installScript?: string;
+  readonly cleanArtifacts?: boolean,
 }
 
 // Encapsulates the platform-specific commands.
@@ -160,6 +170,14 @@ class OsCommand {
       return `ROBOCOPY "${src}" "${dest}" /E`;
     } else {
       return `cp -r "${src}" "${dest}"`;
+    }
+  }
+
+  deleteDirectory(dir: string): string {
+    if (this.osPlatform === 'win32') {
+      return `rmdir /s /q "${dir}"`;
+    } else {
+      return `rm -rf "${dir}"`;
     }
   }
 }
