@@ -15,7 +15,7 @@ This library is intended to be combined with the CDK version 2.
 ### Install
 
 ```sh
-npm install https://github.com/codemonger-io/cdk-qwik-bundle.git#v0.1.0
+npm install https://github.com/codemonger-io/cdk-qwik-bundle.git#v0.2.0
 ```
 
 There is no package published to [npm](https://www.npmjs.com) yet.

@@ -23,6 +23,7 @@ export AWS_PROFILE=codemonger-jp
 
 You can use the default toolkit stack, though, I prefer to create a toolkit stack dedicated to each project, because it makes cleanup easier after delete the project.
 If you want to create a toolkit stack other than the default, you should also [set the synthesizer qualifier](#setting-the-synthesizer-qualifier).
+Here is an example:
 
 ```sh
 TOOLKIT_STACK_NAME=qwik-bundle-examples-toolkit
@@ -31,6 +32,7 @@ TOOLKIT_STACK_NAME=qwik-bundle-examples-toolkit
 ### Setting the synthesizer qualifier
 
 Without a unique qualifier, conflicts between different toolkit stacks may occur.
+Here is an example:
 
 ```sh
 TOOLKIT_STACK_QUALIFIER=qwikbndlex

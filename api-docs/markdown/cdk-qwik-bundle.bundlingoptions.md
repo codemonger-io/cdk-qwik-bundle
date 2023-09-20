@@ -23,6 +23,7 @@ export interface BundlingOptions extends DockerRunOptions
 |  [assetHash?](./cdk-qwik-bundle.bundlingoptions.assethash.md) | <code>readonly</code> | string | **_(BETA)_** _(Optional)_ Asset hash. |
 |  [assetHashType?](./cdk-qwik-bundle.bundlingoptions.assethashtype.md) | <code>readonly</code> | AssetHashType | **_(BETA)_** _(Optional)_ Asset hash type. |
 |  [bundlingFileAccess?](./cdk-qwik-bundle.bundlingoptions.bundlingfileaccess.md) | <code>readonly</code> | BundlingFileAccess | **_(BETA)_** _(Optional)_ File access mode. |
+|  [cleanArtifacts?](./cdk-qwik-bundle.bundlingoptions.cleanartifacts.md) | <code>readonly</code> | boolean | **_(BETA)_** _(Optional)_ Whether "dist" and "server" folders are deleted before building. |
 |  [exclude?](./cdk-qwik-bundle.bundlingoptions.exclude.md) | <code>readonly</code> | string\[\] | **_(BETA)_** _(Optional)_ Path patterns of files excluded from hash computation. |
 |  [forceDockerBundling?](./cdk-qwik-bundle.bundlingoptions.forcedockerbundling.md) | <code>readonly</code> | boolean | **_(BETA)_** _(Optional)_ Forces bundling in a Docker container. |
 |  [ignoreMode?](./cdk-qwik-bundle.bundlingoptions.ignoremode.md) | <code>readonly</code> | IgnoreMode | **_(BETA)_** _(Optional)_ Ignore mode. |
