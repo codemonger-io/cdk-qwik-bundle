@@ -29,6 +29,7 @@ export class CompositeStack extends Stack {
         environment: {
           DISTRIBUTION_BASEPATH: basepath,
         },
+        cleanArtifacts: true,
       },
     });
     const qwikAppUrl = qwikApp.addFunctionUrl({
