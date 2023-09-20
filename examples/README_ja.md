@@ -23,6 +23,7 @@ export AWS_PROFILE=codemonger-jp
 
 デフォルトのツールキットスタックを使ってもよいですが、個人的には各プロジェクトごとにツールキットスタックを作るのが好みです。プロジェクトを削除した後の後始末が楽だからです。
 デフォルト以外のツールキットスタックを作成する場合は、[Synthesizer Qualifierも設定](#synthesizer-qualifierの設定)した方がよいです。
+以下は例です。
 
 ```sh
 TOOLKIT_STACK_NAME=qwik-bundle-examples-toolkit
@@ -31,6 +32,7 @@ TOOLKIT_STACK_NAME=qwik-bundle-examples-toolkit
 ### Synthesizer Qualifierの設定
 
 ユニークなQualifierを設定しないと、ツールキットスタック間の衝突が発生するかもしれません。
+以下は例です。
 
 ```sh
 TOOLKIT_STACK_QUALIFIER=qwikbndlex
