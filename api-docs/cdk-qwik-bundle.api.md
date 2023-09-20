@@ -33,6 +33,7 @@ export interface BundlingOptions extends DockerRunOptions {
     readonly assetHash?: string;
     readonly assetHashType?: AssetHashType;
     readonly bundlingFileAccess?: BundlingFileAccess;
+    readonly cleanArtifacts?: boolean;
     readonly exclude?: string[];
     readonly forceDockerBundling?: boolean;
     readonly ignoreMode?: IgnoreMode;
